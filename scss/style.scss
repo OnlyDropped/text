@@ -1,0 +1,219 @@
+@import "fonts";
+@import "reset";
+@import "vars";
+@import "global";
+//body {
+//  /background-color: red;
+//}
+.main {
+  padding-top: 80px;
+}
+.main-header {
+  //background-color: fuchsia;
+  display: flex;
+  align-items: center;
+  padding-bottom: 30px;
+  &__title {
+    @extend %TTNorms-Bold-700;
+    font-size: 28px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: $black-color;
+    margin-right: 20px;
+  }
+  &__sales {
+    display: flex;
+    align-items: center;
+    padding: 5px 6px;
+    background: $yellow-color;
+    border-radius: 4px;
+    @extend %TTNorms-Medium-500;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  &__img {
+    margin-right: 5px;
+  }
+}
+.main-body {
+  //background: darkorange;
+  //padding: 30px 0 36px;
+  //background: linear-gradient(177.19deg, rgba(236, 236, 236, 0.8) 4.65%, rgba(235, 235, 235, 0.6) 44.2%, rgba(235, 235, 235, 0) 98.48%);
+  background: linear-gradient(
+      177.19deg,
+      rgba(236, 236, 236, 0.8) 4.65%,
+      rgba(235, 235, 235, 0.6) 44.2%,
+      rgba(235, 235, 235, 0) 98.48%
+    ),
+    url("../img/bg.png");
+  &__inner {
+    padding: 30px 0 36px;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 509px;
+      height: 200px;
+      background-image: url("../img/img.png");
+      right: 0;
+      bottom: -40px;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+  &__items + .main-body__items {
+    margin-left: 30px;
+  }
+  &__items {
+    //background: darkmagenta;
+    max-width: 270px;
+    width: 100%;
+  }
+  &__title {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    @extend %TTNorms-Regular-400;
+    font-size: 18px;
+    line-height: 24px;
+    color: $black-color;
+    img {
+      margin-right: 6px;
+    }
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+  &__item + .main-body__item {
+    margin-left: 10px;
+  }
+  &__btn,
+  &__price {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    border: none;
+    color: $black-color;
+    cursor: pointer;
+  }
+  &__btn {
+    @extend %TTNorms-Regular-400;
+    font-size: 16px;
+    line-height: 20px;
+    border: 1px solid #fff;
+    transition: all 0.6s ease-in-out;
+    &:hover {
+      background: #fce8e9;
+      border: 1px solid #e31e25;
+    }
+    &:active {
+      background: #e31e25;
+      color: #fff;
+      border: none;
+    }
+  }
+  &__price {
+    @extend %TTNorms-Medium-500;
+    font-size: 20px;
+    line-height: 20px;
+  }
+  &__arrange {
+    display: inline-block;
+    background: #fff;
+    border: 2px solid #e31e25;
+    border-radius: 4px;
+    padding: 20px 30px;
+    @extend %TTNorms-Medium-500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $red-color;
+    transition: all 0.5s ease-out;
+    &:hover {
+      background: #e31e25;
+      color: #fff;
+    }
+  }
+}
+.fancybox-can-pan .fancybox-content,
+.fancybox-can-swipe .fancybox-content {
+  cursor: auto;
+}
+.fancybox-content {
+  background: #fff;
+  display: inline-block;
+  margin: 0;
+  max-width: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  text-align: left;
+  vertical-align: middle;
+
+  padding: 0;
+  padding-bottom: 30px;
+  margin: 0;
+}
+.pop-up-header {
+  @extend %TTNorms-Bold-700;
+  font-size: 24px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: #1a1a18;
+  padding: 34px 0 20px;
+  background: #f1f2f2;
+  text-align: center;
+}
+.pop-up-form {
+  padding: 20px 30px 0;
+  display: flex;
+  flex-direction: column;
+  &__label + .pop-up-form__label {
+    margin-top: 15px;
+  }
+  &__label {
+    max-width: 100%;
+    width: 100%;
+  }
+  &__input {
+    width: 100%;
+    background: #f1f2f2;
+    border: 1px solid #99a2ad;
+    border-radius: 4px;
+    outline: none;
+    padding: 15px;
+    &::placeholder {
+      @extend %TTNorms-Regular-400;
+      font-size: 14px;
+      line-height: 20px;
+      color: #99a2ad;
+    }
+  }
+  &__btn {
+    border: none;
+    cursor: pointer;
+    padding: 15px 30px;
+    background: $red-color;
+    border-radius: 4px;
+    width: fit-content;
+
+    margin-top: 30px;
+    @extend %TTNorms-Medium-500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+}
+@import "media";
