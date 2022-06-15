@@ -164,6 +164,20 @@
   padding-bottom: 30px;
   margin: 0;
 }
+.fancybox-slide--html .fancybox-close-small {
+  padding: 10px;
+}
+.fancybox-close-small {
+  opacity: 1;
+}
+.fancybox-button svg {
+  display: none;
+}
+.fancybox-button {
+  background-image: url("../img/icons/close.svg") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
 .pop-up-header {
   @extend %TTNorms-Bold-700;
   font-size: 24px;
@@ -192,6 +206,8 @@
     border-radius: 4px;
     outline: none;
     padding: 15px;
+    @extend %TTNorms-Bold-700;
+    font-size: 16px;
     &::placeholder {
       @extend %TTNorms-Regular-400;
       font-size: 14px;
@@ -215,5 +231,49 @@
     text-transform: uppercase;
     color: #fff;
   }
+  &__custom {
+    // Тут мы просто центрируем чекбокс и текст
+    display: flex;
+    align-items: center;
+
+    @extend %TTNorms-Regular-400;
+    font-size: 14px;
+    line-height: 20px;
+    color: $grey-color;
+    margin-top: 17px;
+    cursor: pointer;
+  }
+  &__custom .pop-up-form__checkbox {
+    margin-right: 10px;
+  }
+  &__custom input {
+    -webkit-appearance: none;
+    position: absolute;
+  }
+  &__checkbox {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: #f1f2f2;
+    border: 1px solid #898989;
+    border-radius: 4px;
+  }
+  .checkmark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: auto;
+    display: none;
+  }
+  &__custom input:checked ~ .pop-up-form__checkbox .checkmark {
+    display: block;
+  }
+  &__custom input:checked ~ .pop-up-form__checkbox {
+    background: #fce8e9;
+    border: 1px solid #e31e25;
+  }
 }
+
 @import "media";
